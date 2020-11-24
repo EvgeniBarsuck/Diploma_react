@@ -1,6 +1,6 @@
 import React from 'react';
-import AboutCompanyes from './aboutCompanyes'
-import {connect} from 'react-redux'
+import AboutCompanyes from './aboutCompanyes';
+import {connect} from 'react-redux';
 import {getAboutCompanyActions} from '../redux/aboutCompanyActions'
 
 class Clock extends React.Component {
@@ -13,8 +13,8 @@ class Clock extends React.Component {
         }
     }
 
-    async componentDidMount(){
-        this.props.getAboutCompanyActions();
+    componentDidMount(){
+        this.props.aboutCompany();
     }
 
     submitHandler = event =>{
@@ -43,8 +43,10 @@ class Clock extends React.Component {
       );
     }
   }
-  const mapDispatchToProps = {
-        aboutCompany : getAboutCompanyActions
+  const mapDispatchToProps = dispatch => {
+    return{
+        aboutCompany :  dispatch(getAboutCompanyActions())
+    }
   }
 
 export default connect(null, mapDispatchToProps)(Clock);
