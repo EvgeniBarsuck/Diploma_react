@@ -1,9 +1,8 @@
 import React from 'react';
-import AboutCompanyes from './aboutCompanyes';
 import {connect} from 'react-redux';
 import {getAboutCompanyActions} from '../redux/aboutCompanyActions'
 
-class Clock extends React.Component {
+class AboutCompany extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -14,7 +13,6 @@ class Clock extends React.Component {
     }
 
     componentDidMount(){
-        this.props.aboutCompany();
     }
 
     submitHandler = event =>{
@@ -38,7 +36,6 @@ class Clock extends React.Component {
                 <button type="submit" onClick = {this.submitHandler}>Кнопка </button>
                 <textarea name='about' value={this.state.aboutCompany} onChange = {e => this.onChange(e)}></textarea>
             </div>
-            <AboutCompanyes/>
         </div>  
       );
     }
@@ -49,4 +46,4 @@ class Clock extends React.Component {
     }
   }
 
-export default connect(null, mapDispatchToProps)(Clock);
+export default connect(null, mapDispatchToProps)(AboutCompany);

@@ -1,14 +1,14 @@
 
 import {
-    GET_ABOUT_START,
-    GET_ABOUT_SUCCESS,
-    GET_ABOUT_FAILURE    
+    GET_ABOUT_COMPANY_START,
+    GET_ABOUT_COMPANY_SUCCESS,
+    GET_ABOUT_COMPANY_FAILURE    
 } from './typesAboutCompany'
 
 import axios from 'axios';
 
 export function getAboutCompanyActions (){
-    return dispatch =>{
+    return async dispatch =>{
         dispatch(getAboutCompanyStart());
         axios
         .get(`http://localhost:5000/api/aboutcompany`,)
@@ -22,14 +22,14 @@ export function getAboutCompanyActions (){
 }
 
 const getAboutCompanyStart = () => ({
-    type: GET_ABOUT_START
+    type: GET_ABOUT_COMPANY_START
 });
 const addTodoSuccess = aboutCompany => ({
-    type: GET_ABOUT_SUCCESS,
+    type: GET_ABOUT_COMPANY_SUCCESS,
     payload: Array.from(aboutCompany)
 });
 const aboutCompanyFailure = error => ({
-    type: GET_ABOUT_FAILURE,
+    type: GET_ABOUT_COMPANY_FAILURE,
     payload: {
       error
     }

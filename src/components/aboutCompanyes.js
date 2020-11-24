@@ -2,11 +2,11 @@ import React from 'react';
 import {AboutCompany} from './aboutCompany';
 import {connect} from 'react-redux'
 
-const AboutCompanyes = () => {
-    if([]){
+const AboutCompanyes = ({aboutCompany}) => {
+    if(!aboutCompany){
         return <p>Описания пока нет</p>
     }
-    return this.props.aboutCompany.map(aboutCompany => <AboutCompany aboutCompany = {aboutCompany}/>);
+    return aboutCompany.map(aboutCompany => <AboutCompany aboutCompany = {aboutCompany}/>);
 }
 
 const mapStateToProps = state => {

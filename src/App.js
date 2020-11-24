@@ -1,4 +1,4 @@
-import Clock from './components/test'
+import AboutCompany from './components/test'
 import React from 'react';
 import AboutCompanyes from './components/aboutCompanyes'
 
@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-       <Clock />
+       <AboutCompany />
        <AboutCompanyes/>
     </div>
   );
