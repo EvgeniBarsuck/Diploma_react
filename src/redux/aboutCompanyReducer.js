@@ -17,6 +17,7 @@ export const aboutCompanyReducer = (state = initialState, action) => {
             loading: true
         };
         case GET_ABOUT_COMPANY_SUCCESS :{
+        
             return { ...state, aboutCompany : action.payload }
         }     
         default : return state;

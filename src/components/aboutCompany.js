@@ -1,16 +1,44 @@
 import React from 'react';
+import {connect} from 'react-redux'
 
 export class AboutCompany extends React.Component{
     constructor(props){
         super(props);
         this.props = props;
-        console.log(props);
     }
+
     
     render(){
-        return (
-            <li key = {this.props.aboutCompany._id.toString()}>{this.props.aboutCompany.Name}</li> 
-        )
+        // eslint-disable-next-line no-cond-assign
+        if(this.props.type === "Head"){
+            return (
+                <div><p>{this.props.aboutCompany[0].Name}</p></div>
+            )
+        }
+        if(this.props.type === "ShortDescription"){
+            return (
+                <div><p>{this.props.aboutCompany[0].ShortDescription}</p></div>
+            )
+        }
+        if(this.props.type === "LongDescription"){
+            return (
+                <div><p >{this.props.aboutCompany[0].LongDescription}</p></div>
+            )
+        }
+        if(this.props.type === "Img"){
+            return (
+                <div>
+                    <img src={this.props.aboutCompany[0].Img[0]} alt="альтернативный текст"></img>
+                </div>
+            )
+        } 
     }
 
 } 
+const mapStateToProps = state => {
+    return {
+        aboutCompany : state.aboutCompany.aboutCompany
+    }
+}
+
+export default connect(mapStateToProps,null)(AboutCompany)
