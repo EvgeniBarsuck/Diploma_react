@@ -8,6 +8,7 @@ import {createStore, compose,applyMiddleware} from 'redux'
 import {rootReducer} from './redux/rootReducer';
 import thunk from 'redux-thunk';
 import { BrowserRouter } from 'react-router-dom';
+import exampleWorkReducer from './redux/exampleWork/exampleWorkReducer'
 
 
 

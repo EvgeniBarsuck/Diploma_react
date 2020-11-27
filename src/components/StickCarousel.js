@@ -13,7 +13,6 @@ class SimpleSlider extends React.Component {
     render() { 
         const array = this.props.aboutCompany[0].Img;
         const arrayElement =  array.map((img, index) => <CarouselPhoto img = {img} key={index}/>)
-        console.log("12")
         const settings = {
             dots: true,
             infinite: true,

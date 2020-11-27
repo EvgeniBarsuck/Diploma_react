@@ -1,6 +1,8 @@
 import {combineReducers} from 'redux'
-import {aboutCompanyReducer} from './aboutCompanyReducer'
+import {aboutCompanyReducer} from './aboutCompany/aboutCompanyReducer';
+import {exampleWorkReducer} from './exampleWork/exampleWorkReducer'
 
 export const rootReducer = combineReducers({
-    aboutCompany : aboutCompanyReducer
+    aboutCompany : aboutCompanyReducer,
+    exampleWork : exampleWorkReducer
 })
