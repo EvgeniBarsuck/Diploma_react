@@ -10,7 +10,6 @@ const ExampleWorkState = {
 }
 
 export const exampleWorkReducer = (state = ExampleWorkState, action) => {
-    
     switch (action.type){
         case GET_EXAMPLE_WORK_START : return {
             ...state,

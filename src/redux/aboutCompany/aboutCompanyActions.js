@@ -14,7 +14,7 @@ export function getAboutCompanyActions (){
         axios
         .get(`http://localhost:5000/api/aboutcompany`,)
         .then(res => {
-            dispatch(addTodoSuccess(res.data));
+            dispatch(getAboutCompanySuccess(res.data));
         })
         .catch(err => {
             dispatch(aboutCompanyFailure(err.message));
@@ -27,7 +27,7 @@ export function getAboutCompanyActions (){
 const getAboutCompanyStart = () => ({
     type: GET_COMPANY_START
 });
-const addTodoSuccess = aboutCompany => ({
+const getAboutCompanySuccess = aboutCompany => ({
     type: GET_COMPANY_SUCCESS,
     payload: aboutCompany
 });

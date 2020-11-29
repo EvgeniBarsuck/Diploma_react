@@ -11,7 +11,14 @@ class SimpleSlider extends React.Component {
         this.props = props;
     }
     render() { 
-        const array = this.props.aboutCompany[0].Img;
+        if(this.props.aboutCompany.loading){
+            return (
+                <div>
+                    <span>Загрузка</span>
+                </div>
+            )
+        }
+        const array = this.props.aboutCompany.aboutCompany[0].Img;
         const arrayElement =  array.map((img, index) => <CarouselPhoto img = {img} key={index}/>)
         const settings = {
             dots: true,
@@ -40,9 +47,8 @@ class SimpleSlider extends React.Component {
 }
 
 const mapStateToProps = state => {
-    console.log()
     return {
-        aboutCompany : state.aboutCompany.aboutCompany
+        aboutCompany : state.aboutCompany
     }
 }
 

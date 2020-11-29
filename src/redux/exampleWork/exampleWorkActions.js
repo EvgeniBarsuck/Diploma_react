@@ -12,10 +12,10 @@ export function getExampleWork (){
         axios
         .get(`http://localhost:5000/api/exampleofwork`,)
         .then(res => {
-            dispatch(examleWorkSucccess(res.data));
+            dispatch(getExamleWorkSucccess(res.data));
         })
         .catch(err => {
-            dispatch(examleWorkFailure(err.message));
+            dispatch(getExamleWorkFailure(err.message));
         });
     }
 }
@@ -23,11 +23,11 @@ export function getExampleWork (){
 const getExamleWorkStart = () => ({
     type: GET_EXAMPLE_WORK_START
 });
-const examleWorkSucccess = getExampleWork => ({
+const getExamleWorkSucccess = getExampleWork => ({
     type: GET_EXAMPLE_WORK_SUCCESS,
     payload: getExampleWork
 });
-const examleWorkFailure = error => ({
+const getExamleWorkFailure = error => ({
     type: GET_EXAMPLE_WORK_FAILURE,
     payload: {
       error

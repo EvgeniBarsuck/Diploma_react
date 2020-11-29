@@ -1,4 +1,4 @@
-import IndexAboutCompany from './components/indexAboutCompany'
+import SimpleBottomNavigation from './components/footer/footer'
 import React from 'react';
 import NavBar from './components/Header/NavBar'
 import Main from './router/Main'
@@ -8,15 +8,15 @@ import './App.css';
 function App() {
   return (
       <div>
-         <header>
+        <header>
             <NavBar/>
         </header>
-      <Container>
-        <Main/> 
+        <Container>
+          <Main/> 
         </Container>
-      <footer>
-
-      </footer>
+        <footer>
+          <SimpleBottomNavigation/>
+        </footer>
       </div>    
   );
 }

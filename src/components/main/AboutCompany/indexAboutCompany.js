@@ -1,11 +1,10 @@
 import React from 'react';
 import Information from './Information';
-import {getAboutCompanyActions} from '../redux/aboutCompany/aboutCompanyActions'
-import {getExampleWork} from '../redux/exampleWork/exampleWorkActions'
+import {getAboutCompanyActions} from '../../../redux/aboutCompany/aboutCompanyActions'
+import {getExampleWork} from '../../../redux/exampleWork/exampleWorkActions'
 import {connect} from 'react-redux';
 import StickCarousel from './StickCarousel';
 import ProductLink from './ProductLink';
-
 
 class App extends React.Component{
     render() {
