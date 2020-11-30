@@ -1,12 +1,12 @@
 import {
-    GET_EXAMPLE_WORK_START,
-    GET_EXAMPLE_WORK_SUCCESS,
-    GET_EXAMPLE_WORK_FAILURE
-} from './typesExampleWork';
+    GET_EXAMPLE_WORK_START_ALL,
+    GET_EXAMPLE_WORK_SUCCESS_ALL,
+    GET_EXAMPLE_WORK_FAILURE_ALL
+} from '../typesExampleWork';
 
 import axios from 'axios';
 
-export function getExampleWork (){
+export function getAllExampleWork (){
     return async dispatch =>{
         dispatch(getExamleWorkStart());
         axios
@@ -21,14 +21,14 @@ export function getExampleWork (){
 }
 
 const getExamleWorkStart = () => ({
-    type: GET_EXAMPLE_WORK_START
+    type: GET_EXAMPLE_WORK_START_ALL
 });
 const getExamleWorkSucccess = getExampleWork => ({
-    type: GET_EXAMPLE_WORK_SUCCESS,
+    type: GET_EXAMPLE_WORK_SUCCESS_ALL,
     payload: getExampleWork
 });
 const getExamleWorkFailure = error => ({
-    type: GET_EXAMPLE_WORK_FAILURE,
+    type: GET_EXAMPLE_WORK_FAILURE_ALL,
     payload: {
       error
     }
