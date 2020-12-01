@@ -3,7 +3,7 @@ import {
     GET_COMPANY_START,
     GET_COMPANY_SUCCESS,
     GET_COMPANY_FAILURE
-} from './typesAboutCompany';
+} from './TypesAboutCompany';
 
 import axios from 'axios';
 

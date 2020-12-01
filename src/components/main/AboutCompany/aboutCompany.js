@@ -1,6 +1,6 @@
 import React from 'react';
 import Information from './Information';
-import {getAboutCompanyActions} from '../../../redux/aboutCompany/aboutCompanyActions'
+import {getAboutCompanyActions} from '../../../redux/aboutCompany/AboutCompanyActions'
 import {getAllExampleWork} from '../../../redux/exampleWork/GetAll/ExampleWorkActions'
 import {connect} from 'react-redux';
 import StickCarousel from './StickCarousel';

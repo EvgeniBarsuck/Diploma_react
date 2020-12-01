@@ -1,10 +1,10 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import ServiceInformation from './ExampleWorkInformation'
-import {getOneExampleWork} from '../../../redux/exampleWork/GetOne/OneExampleWorkActions';
+import {getOneExampleWork} from '../../../../redux/exampleWork/GetOne/OneExampleWorkActions';
 
 
-class Service extends React.Component{
+class ExampleWork extends React.Component{
     constructor (props){
         super(props);
         this.props = props;
@@ -34,4 +34,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 
 
-export default connect(null,mapDispatchToProps)(Service);
+export default connect(null,mapDispatchToProps)(ExampleWork);

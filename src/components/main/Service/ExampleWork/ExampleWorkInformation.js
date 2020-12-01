@@ -1,12 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import SingleLineGridList from './SingleLineGridList';
 
-class ServiceInformation extends React.Component{
+class ExampleWorkInformation extends React.Component{
     constructor (props){
         super(props);
         this.props = props;
-        // this.massPath = this.props.match.url.replace(/\//g, " ").trim().split(" ");
-        console.log( this.props)
     }
     render() {
         if(this.props.oneExampleOfWork.loading){
@@ -15,6 +14,9 @@ class ServiceInformation extends React.Component{
         return (
             <div>
                 <p>{this.props.oneExampleOfWork.oneExampleOfWork[0].Name}</p>
+                <div>
+                    <SingleLineGridList items = {this.props.oneExampleOfWork.oneExampleOfWork[0].MassImg}/>
+                </div>
             </div>
         )
     }
@@ -26,4 +28,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps,null)(ServiceInformation)
+export default connect(mapStateToProps,null)(ExampleWorkInformation)

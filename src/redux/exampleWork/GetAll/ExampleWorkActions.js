@@ -2,7 +2,7 @@ import {
     GET_EXAMPLE_WORK_START_ALL,
     GET_EXAMPLE_WORK_SUCCESS_ALL,
     GET_EXAMPLE_WORK_FAILURE_ALL
-} from '../typesExampleWork';
+} from '../TypesExampleWork';
 
 import axios from 'axios';
 

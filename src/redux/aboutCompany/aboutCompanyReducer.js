@@ -1,7 +1,7 @@
 import {
     GET_COMPANY_SUCCESS,
     GET_COMPANY_START
-} from './typesAboutCompany';
+} from './TypesAboutCompany';
 
 
 const initialState = {
