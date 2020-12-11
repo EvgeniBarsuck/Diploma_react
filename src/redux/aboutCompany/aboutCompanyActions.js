@@ -1,11 +1,9 @@
-
+import axios from 'axios';
 import {
     GET_COMPANY_START,
     GET_COMPANY_SUCCESS,
     GET_COMPANY_FAILURE
 } from './TypesAboutCompany';
-
-import axios from 'axios';
 
 export function getAboutCompanyActions (){
     return async dispatch =>{

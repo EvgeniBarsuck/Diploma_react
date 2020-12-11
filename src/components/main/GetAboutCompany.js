@@ -16,17 +16,17 @@ export class GetAboutCompany extends React.Component{
         }
         if(this.props.type === "Head"){
             return (
-                <h2>{this.props.aboutCompany.aboutCompany[0].Name}</h2>
+                <h2>{this.props.aboutCompany.aboutCompany.Name}</h2>
             )
         }
         if(this.props.type === "ShortDescription"){
             return (
-                <span>{this.props.aboutCompany.aboutCompany[0].ShortDescription}</span>
+                <span>{this.props.aboutCompany.aboutCompany.ShortDescription}</span>
             )
         }
         if(this.props.type === "LongDescription"){
             return (
-                <span >{this.props.aboutCompany.aboutCompany[0].LongDescription}</span>
+                <span >{this.props.aboutCompany.aboutCompany.LongDescription}</span>
             )
         }
     

@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
-import indexAboutCompany from '../components/main/AboutCompany/AboutCompany';
-import ExampleWork from '../components/main/Service/ExampleWork/ExampleWork'
+import indexAboutCompany from '../Pages/AboutCompany/AboutCompany';
+import ExampleWork from '../Pages/Service/ExampleWork'
 
 const Main = () => (
   <main>

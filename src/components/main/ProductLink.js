@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {getRandomExample} from './src/randomExample';
-import ProductCard from './productCard';
 import Box from '@material-ui/core/Box';
+import {connect} from 'react-redux';
+import {getRandomExample} from './src/RandomExample';
+import ProductCard from './productCard';
 
 
 class ProductLink extends React.Component {

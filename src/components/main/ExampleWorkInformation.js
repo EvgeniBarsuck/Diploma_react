@@ -8,14 +8,14 @@ class ExampleWorkInformation extends React.Component{
         this.props = props;
     }
     render() {
-        if(this.props.oneExampleOfWork.loading){
+        if(this.props.exampleWork.exampleWork.loading){
             return <p>Загрузка</p>
         }
         return (
             <div>
-                <p>{this.props.oneExampleOfWork.oneExampleOfWork[0].Name}</p>
+                <p>{this.props.exampleWork.exampleWork.oneExampleOfWork.Name}</p>
                 <div>
-                    <SingleLineGridList items = {this.props.oneExampleOfWork.oneExampleOfWork[0].MassImg}/>
+                    <SingleLineGridList items = {this.props.exampleWork.exampleWork.oneExampleOfWork.MassImg}/>
                 </div>
             </div>
         )
@@ -24,7 +24,7 @@ class ExampleWorkInformation extends React.Component{
 
 const mapStateToProps = state => {
     return {
-        oneExampleOfWork : state.oneExampleOfWork
+        exampleWork : state
     }
 }
 

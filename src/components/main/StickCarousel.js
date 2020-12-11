@@ -2,8 +2,8 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import React from "react";
 import Slider from "react-slick";
+import CarouselPhoto from "./CarouselPhoto";
 import {connect} from 'react-redux';
-import CarouselPhoto from "./CarouselPhoto"
 
 class SimpleSlider extends React.Component {
     constructor(props){
@@ -18,7 +18,8 @@ class SimpleSlider extends React.Component {
                 </div>
             )
         }
-        const array = this.props.aboutCompany.aboutCompany[0].Img;
+        console.log(this.props.aboutCompany.aboutCompany);
+        const array = this.props.aboutCompany.aboutCompany.Img;
         const arrayElement =  array.map((img, index) => <CarouselPhoto img = {img} key={index}/>)
         const settings = {
             dots: true,

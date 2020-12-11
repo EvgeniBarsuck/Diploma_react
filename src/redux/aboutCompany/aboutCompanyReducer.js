@@ -5,7 +5,7 @@ import {
 
 
 const initialState = {
-    aboutCompany : []
+    aboutCompany : {}
 }
 
 export const aboutCompanyReducer = (state = initialState, action) => {

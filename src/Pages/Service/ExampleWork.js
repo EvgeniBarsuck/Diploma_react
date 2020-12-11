@@ -1,22 +1,20 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import ServiceInformation from './ExampleWorkInformation'
-import {getOneExampleWork} from '../../../../redux/exampleWork/GetOne/OneExampleWorkActions';
+import ServiceInformation from '../../components/main/ExampleWorkInformation'
+import {getOneExampleWork} from '../../redux/exampleWork/ExampleWorkActions';
 
 
 class ExampleWork extends React.Component{
     constructor (props){
         super(props);
-        this.props = props;
-        this.props.oneExampleOfWork(this.props.match.params.id);
-
+        this.props.ExampleOfWork(this.props.match.params.id);
     };
     render() {
         
-        if(this.props.oneExampleOfWork.loading){
+        if(this.props.ExampleOfWork.loading){
             return <p>Загрузка</p>
         }
-
+        console.log(this.props.ExampleOfWork)
         return (
             <div>
                     <ServiceInformation/>
@@ -28,7 +26,7 @@ class ExampleWork extends React.Component{
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return{
-        oneExampleOfWork : () => dispatch(getOneExampleWork(ownProps.match.params.id)),
+        ExampleOfWork : () => dispatch(getOneExampleWork(ownProps.match.params.id)),
         // exampleWork :  dispatch(getExampleWork())
     }
 }

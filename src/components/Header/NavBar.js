@@ -1,6 +1,5 @@
 import React from 'react';
 import clsx from 'clsx';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import AppBar from '@material-ui/core/AppBar';
@@ -11,21 +10,10 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import SubjectIcon from '@material-ui/icons/Subject';
-import HelpIcon from '@material-ui/icons/Help';
-import InfoIcon from '@material-ui/icons/Info';
-import HomeIcon from '@material-ui/icons/Home';
-import VerifiedUserIcon from '@material-ui/icons/VerifiedUser';
-import ContactsIcon from '@material-ui/icons/Contacts';
-import WorkIcon from '@material-ui/icons/Work';
-import FeedbackIcon from '@material-ui/icons/Feedback';
-import SupervisedUserCircleIcon from '@material-ui/icons/SupervisedUserCircle';
-import PersonAddIcon from '@material-ui/icons/PersonAdd';
 import BreadCrumbs from './BreadCrumbs';
-import { Link } from 'react-router-dom';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import NavBarLinks from './src/NavBarLinks';
+
 
 
 const drawerWidth = 240;
@@ -87,52 +75,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const icon = {
-  "0" : { 
-          "icon" : <HomeIcon/>,
-          "url" : "/"
-        },
-  "1" : { 
-          "icon" : <HelpIcon/>,
-          "url" : "/aboutcompany"
-        },
-  "2" : { 
-          "icon" :<SubjectIcon/>,
-          "url" : "/requipmentrental"
-        },
-  "3" : {
-          "icon" : <WorkIcon/>,
-          "url" : "/service"
-        },
-  "4" : {
-          "icon" : <VerifiedUserIcon/>,
-          "url" : "/certificates" 
-        },
-  "5" : {
-          "icon" : <VerifiedUserIcon/>,
-          "url" : "/employecertificates"
-        },
-  "6" : { 
-          "icon" :<InfoIcon/>,
-          "url" : "/examplesofworks"
-        },
-  "7" : { 
-          "icon" : <PersonAddIcon/>,
-          "url" : "/jobopenings"
-        },
-  "8" : { 
-          "icon" : <FeedbackIcon/>,
-          "url" : "/feedback"
-        },
-  "9" : { 
-          "icon" : <ContactsIcon/>,
-          "url" : "/contacts"
-        },
-  "10" : { 
-          "icon" : <SupervisedUserCircleIcon/>,
-          "url" : "/ourparther"
-        }
-}
+
 
 export default function PersistentDrawerLeft() {
   const classes = useStyles();
@@ -184,19 +127,12 @@ export default function PersistentDrawerLeft() {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === process.env.THEME_DIRECTION ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
         <Divider />
         <List>
-          {['Главная','О компании', 'Аренда оборудования', 'Наши услуги', 'Сертификаты компании', 'Сертификаты сотрудников','Примеры работ','Вакансии', 'Обратная связь','Контакты', 'Наши партнеры'].map((text, index) => (
-            <ListItem button  key={text}>
-              <ListItemIcon>{icon[index].icon}</ListItemIcon> 
-              <Link to={icon[index].url}>
-                <ListItemText>{text}</ListItemText>
-              </Link>
-            </ListItem>
-          ))}
+          {NavBarLinks()}
         </List>
         <Divider />
       </Drawer>
