@@ -26,7 +26,10 @@ export class GetAboutCompany extends React.Component{
         }
         if(this.props.type === "LongDescription"){
             return (
-                <span >{this.props.aboutCompany.aboutCompany.LongDescription}</span>
+                <pre>
+                    <span >{this.props.aboutCompany.aboutCompany.LongDescription}</span>
+                </pre>
+
             )
         }
     
