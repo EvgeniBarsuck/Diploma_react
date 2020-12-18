@@ -1,5 +1,4 @@
 import React from 'react';
-import {PropsToObject as propsToObject} from './src/PropsToObject'
 import { TextareaAutosize } from '@material-ui/core';
 import { connect } from 'react-redux';
 import {patchAboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyActions'
@@ -16,7 +15,7 @@ import {patchAboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyAct
         this.setState({[name]: event.target.value});
     }
     handleSubmit(event) {
-        this.props.patchAboutCompany({Name : this.state.name });
+        this.props.patchAboutCompany(this.state);
         event.preventDefault();
     }
     render(){

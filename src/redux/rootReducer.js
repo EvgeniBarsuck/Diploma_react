@@ -1,8 +1,10 @@
 import {combineReducers} from 'redux'
 import {aboutCompanyReducer} from './aboutCompany/AboutCompanyReducer';
 import {allExampleWorkReducer} from './exampleWork/ExampleWorkReducer';
+import {contactsReducer} from './Contacts/ContactsReducer'
 
 export const rootReducer = combineReducers({
     aboutCompany : aboutCompanyReducer,
-    exampleWork : allExampleWorkReducer
+    exampleWork : allExampleWorkReducer,
+    contacts : contactsReducer
 })
