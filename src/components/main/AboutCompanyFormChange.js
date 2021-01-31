@@ -1,7 +1,7 @@
 import React from 'react';
 import { TextareaAutosize } from '@material-ui/core';
 import { connect } from 'react-redux';
-import {patchAboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyActions'
+import {patchAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyActions'
 
  class AboutCompanyFormChange extends React.Component {
     constructor (props){

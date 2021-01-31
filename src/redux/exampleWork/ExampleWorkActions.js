@@ -5,7 +5,7 @@ import {
     GET_EXAMPLE_WORK_START_ONE,
     GET_EXAMPLE_WORK_SUCCESS_ONE,
     GET_EXAMPLE_WORK_FAILURE_ONE
-} from './TypesExampleWork';
+} from './typesExampleWork';
 
 import axios from 'axios';
 

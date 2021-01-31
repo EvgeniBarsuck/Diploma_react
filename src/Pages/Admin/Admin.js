@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import AboutCompanyFormChange from '../../components/main/AboutCompanyFormChange';
-import {getAboutCompanyActions as AboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyActions';
+import {getAboutCompanyActions as AboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyActions';
 import {getContactsActions} from '../../redux/Contacts/ContactsActions'
 
 

@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux'
-import {aboutCompanyReducer} from './aboutCompany/AboutCompanyReducer';
+import {aboutCompanyReducer} from './aboutCompany/aboutCompanyReducer';
 import {allExampleWorkReducer} from './exampleWork/ExampleWorkReducer';
 import {contactsReducer} from './Contacts/ContactsReducer'
 
