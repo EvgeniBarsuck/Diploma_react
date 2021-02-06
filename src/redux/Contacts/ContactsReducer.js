@@ -13,13 +13,12 @@ const initialState = {
 }
 
 export const contactsReducer = (state = initialState, action) => {
-        
         switch (action.type){
             case GET_CONTACTS_START : return {
                 ...state,
                 loading: true
             };
-            case GET_CONTACTS_SUCCESS : console.log("Туть"); return {
+            case GET_CONTACTS_SUCCESS : return {
                 ...state, contacts : action.payload,
                 loading: false
             }

@@ -30,6 +30,20 @@ async function fetchContacts (){
     return await response;
 }
 
+export async function deletContact(id) {
+    const res = await axios.delete(`http://localhost:5000/api/contacts/${id}`)
+    return res;
+}
+
+export async function patchContact(id, data) {
+    const res = await axios.patch(`http://localhost:5000/api/contacts/${id}`, data)
+}
+
+export async function createContact(data) {
+    const res = await axios.post(`http://localhost:5000/api/contacts/`, data)
+    console.log(res);
+}
+
 
 
 // const getContactsStart = () => ({
