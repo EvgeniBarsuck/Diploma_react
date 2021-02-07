@@ -5,7 +5,7 @@ import {
     PATCH_COMPANY_START,
     PATCH_COMPANY_SUCCESS,
     PATCH_COMPANY_FAILURE
-} from './TypesAboutCompany';
+} from './typesAboutCompany';
 
 
 const initialState = {

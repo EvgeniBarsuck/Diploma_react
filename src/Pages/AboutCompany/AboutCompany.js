@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import StickCarousel from '../../components/main/StickCarousel';
 import ProductLink from '../../components/main/ProductLink';
 import Information from '../../components/main/Information';
-import {getAboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyActions';
+import {getAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyActions';
 import {getAllExampleWork} from '../../redux/exampleWork/ExampleWorkActions';
 
 class AboutCompany extends React.Component{
