@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import AboutCompanyFormChange from '../../components/main/AboutCompanyFormChange';
 import {getAboutCompanyActions as AboutCompanyActions} from '../../redux/aboutCompany/AboutCompanyActions';
 import {getContactsActions} from '../../redux/Contacts/ContactsActions'
+import Select from '../../components/main/Select';
 
 
 
@@ -22,6 +23,7 @@ class Admin extends React.Component{
             <div>
                 <AboutCompanyFormChange description={this.props.aboutCompany.aboutCompany}/>
                 <p>{this.props.contacts.contacts[0].name}</p>
+                <Select />
             </div>
         )
     }
