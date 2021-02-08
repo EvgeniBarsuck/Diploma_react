@@ -23,6 +23,21 @@ export function getAllExampleWork (){
     }
 }
 
+export function patchExampleWork(id, data) {
+        
+        axios
+        .patch(`http://localhost:5000/api/exampleofwork/${id}`, data)
+        .then(res => {
+            console.log(res);
+            return res;
+        })
+        .catch(err => {
+            console.log(err);
+            return err;
+        });
+    
+}
+
 export function getOneExampleWork (id){
     return async dispatch =>{
         dispatch(getExamleWorkStartOne());

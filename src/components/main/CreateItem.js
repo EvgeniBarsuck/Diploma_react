@@ -33,6 +33,6 @@ export default function CreateItem (){
 }
 
 function createContacts(date) {
-    console.log(date);
     createContact(date);
+    window.location.reload();
 }

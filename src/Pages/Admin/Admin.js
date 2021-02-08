@@ -13,6 +13,7 @@ import CreateItem from '../../components/main/CreateItem';
 import ChangeCard from '../../components/main/ChangeCard';
 
 class Admin extends React.Component {
+    exampleOfWork;
     constructor(props) {
         super(props);
         this.props.AboutCompany();
@@ -34,22 +35,40 @@ class Admin extends React.Component {
     componentDidMount() {
         this.setState({
             listContact: this.props.contacts.contacts,
-            exampleWork: this.props.exampleWork,
+            exampleWork: this.props.exampleWork.exampleWork,
         })
+        this.exampleOfWork = this.props.exampleWork.exampleWork;
     }
 
-    render() {
-        if (this.props.aboutCompany.loading || this.props.contacts.loading === undefined || this.props.contacts.loading || this.props.contacts.loading === undefined) {
+    componentDidUpdate() {
+        if(!this.props.exampleWork.exampleWork) {
+            this.exampleOfWork = this.props.exampleWork.exampleWork;
+            
+        }
+    }
+
+    renderExample() {
+        return (
+            <div>
+                {this.exampleOfWork?.map(item => 
+                    <div key={item.id}><ChangeCard item={item} /></div>
+                )}
+            </div>
+        )
+    }
+
+    render = () => {
+        if (
+            this.props.aboutCompany.loading || this.props.contacts.loading === undefined||
+            this.props.contacts.loading || this.props.contacts.loading === undefined ||
+            this.props.exampleWork.loading || this.props.exampleWork.loading === undefined
+        ) {
             return (<p>Загрузка</p>);
         }
-        console.log(this.state.exampleWork);
+        
         const contacts =this.props.contacts.contacts;
 
-        const exampleWorkCard = this.state.exampleWork.map(item => 
-            <div key={item.id}><ChangeCard item={item} /></div>
-        )
-
-        console.log(exampleWorkCard)
+        console.log(this.props.exampleWork.loading)
 
         return (
             <div>
@@ -60,7 +79,7 @@ class Admin extends React.Component {
                 </div>
 
                 <AboutCompanyFormChange description={this.props.aboutCompany.aboutCompany} />
-                {exampleWorkCard}
+                {!this.props.exampleWork.loading && this.renderExample()}
                 <Select />
             </div>
         )
@@ -74,11 +93,10 @@ class Admin extends React.Component {
 // position: "Солдат"
 
 const mapStateToProps = state => {
-    const exampleWork = state.exampleWork.exampleWork;
     return {
         aboutCompany: state.aboutCompany,
         contacts: state.contacts,
-        exampleWork: exampleWork,
+        exampleWork: state.exampleWork,
     }
 }
 

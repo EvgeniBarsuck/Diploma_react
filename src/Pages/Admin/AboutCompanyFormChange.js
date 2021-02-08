@@ -17,6 +17,7 @@ import {patchAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyAct
     handleSubmit(event) {
         this.props.patchAboutCompany(this.state);
         event.preventDefault();
+        window.location.reload();
     }
     render(){
         return(

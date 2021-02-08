@@ -1,5 +1,6 @@
 import React from "react";
 import { TextField , Button } from '@material-ui/core';
+import Tab from '../../components/main/Tab'
 
 const initialState = {
     in1: '',
@@ -30,8 +31,7 @@ class Service extends React.Component {
         return (
             <div>
                 <h2>Наши услуги</h2>
-                <TextField name="in1" label="Standard" type="text" value={this.state.in1} onChange={(e) => this.onHandlerChange(e)} />
-                <Button onClick={() => this.onClick()} >Click</Button>
+                <Tab />
             </div>    
         )
     }

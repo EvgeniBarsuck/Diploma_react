@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import {randomInteger} from './src/RandomExample';
+import { patchExampleWork } from '../../redux/exampleWork/ExampleWorkActions'; 
 import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles({
@@ -22,10 +23,25 @@ const useStyles = makeStyles({
 
 });
 
+function onDelete() {
+
+}
+
+function onChange(id, data) {
+  //console.log(id, data)
+  patchExampleWork(id, data);
+  window.location.reload();
+}
+
 export default function MediaCard({item, getOneExampleWork}) {
   const classes = useStyles();
   const [name, setName] = useState(item.Name);
   const [description, setDescription] = useState(item.Description);
+
+  const data = {
+    Name: name,
+    Description: description,
+  }
 
   return (
     <Card className={classes.root}>
@@ -33,9 +49,8 @@ export default function MediaCard({item, getOneExampleWork}) {
         <CardMedia
           className={classes.media}
           image={item.MassImg[randomInteger(0,item.MassImg.length-1)]}
-          
         >
-            <image src={item.MassImg[randomInteger(0,item.MassImg.length-1)]} />
+        <image src={item.MassImg[randomInteger(0,item.MassImg.length-1)]} />
         </CardMedia>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
@@ -55,7 +70,7 @@ export default function MediaCard({item, getOneExampleWork}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button size="small" onClick={() => onChange(item._id, data)} color="primary">
             Сохранить
         </Button>
         <Button size="small" color="secondary">

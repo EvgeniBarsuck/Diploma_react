@@ -41,10 +41,12 @@ function createData(name, description, email, phone, position, _id) {
 
 function deleteContacts(id){
     deletContact(id);
+    window.location.reload();
 }
 
 function patchContacts(id, data){
     patchContact(id, data);
+    window.location.reload();
 }
 
 function Row(props) {

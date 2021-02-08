@@ -1,4 +1,4 @@
-import SimpleBottomNavigation from './components/Footer/Footer'
+import SimpleBottomNavigation from './components/footer/Footer'
 import React from 'react';
 import NavBar from './components/Header/NavBar'
 import Main from './router/Main'
@@ -14,9 +14,9 @@ function App() {
         <Container>
           <Main/> 
         </Container>
-        <footer>
+        {/* <footer>
           <SimpleBottomNavigation/>
-        </footer>
+        </footer> */}
       </div>    
   );
 }
