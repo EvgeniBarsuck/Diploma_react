@@ -1,4 +1,4 @@
-import SimpleBottomNavigation from './components/footer/footer'
+import SimpleBottomNavigation from './components/Footer/Footer'
 import React from 'react';
 import NavBar from './components/Header/NavBar'
 import Main from './router/Main'

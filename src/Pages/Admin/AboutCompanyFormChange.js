@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextareaAutosize } from '@material-ui/core';
+import { TextField, Button, InputLabel } from '@material-ui/core';
 import { connect } from 'react-redux';
 import {patchAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyActions'
 
@@ -21,16 +21,24 @@ import {patchAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyAct
     render(){
         return(
             <div>
-                <label>
-                    Имя: 
-                    <input defaultValue={this.props.description.Name} type="text" name="name" onChange={this.handleChange}/>
-                </label><br></br>
-                <label>
-                    Краткое описание: 
-                    <TextareaAutosize wiegth="400px" defaultValue={this.props.description.ShortDescription} name="ShortDescription" onChange={this.handleChange}/>
-                </label>
+                <InputLabel >Изменить описание компании</InputLabel>
+                <div>
+                    <TextField defaultValue={this.props.description.Name} type="text" label="Название" name="name" onChange={this.handleChange}/>
+                </div>
+                <div>
+                    <TextField
+                        id="outlined-textarea"
+                        label="Краткое описание"
+                        placeholder="Placeholder"
+                        name="ShortDescription"
+                        multiline
+                        onChange={this.handleChange}
+                        variant="outlined"
+                        defaultValue={this.props.description.ShortDescription}
+                    />
+                </div>
 
-                <button onClick={this.handleSubmit}>Отправить</button>
+                <Button onClick={this.handleSubmit}>Отправить</Button>
             </div>
         )
     }
