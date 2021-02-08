@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Table from '../../components/main/Table';
 import CreateItem from '../../components/main/CreateItem';
 import ChangeCard from '../../components/main/ChangeCard';
+import { Button } from '@material-ui/core';
 
 class Admin extends React.Component {
     exampleOfWork;
@@ -23,6 +24,7 @@ class Admin extends React.Component {
             contactText: "",
             listContact: [],
             exampleWork: [],
+            toggle: false,
         }
     }
 
@@ -51,24 +53,32 @@ class Admin extends React.Component {
         return (
             <div>
                 {this.exampleOfWork?.map(item => 
-                    <div key={item.id}><ChangeCard item={item} /></div>
+                    <div key={item._id}><ChangeCard item={item} /></div>
                 )}
             </div>
         )
     }
 
+    toggle = () => {
+        this.setState({
+            toggle: !this.state.toggle
+        })
+        this.forceUpdate();
+    }
+    
     render = () => {
         if (
             this.props.aboutCompany.loading || this.props.contacts.loading === undefined||
             this.props.contacts.loading || this.props.contacts.loading === undefined ||
-            this.props.exampleWork.loading || this.props.exampleWork.loading === undefined
+            this.props.exampleWork.loading || this.props.exampleWork.loading === undefined ||
+            this.props.exampleWork.exampleWork?.length === 0
         ) {
             return (<p>Загрузка</p>);
         }
-        
+
         const contacts =this.props.contacts.contacts;
 
-        console.log(this.props.exampleWork.loading)
+        //console.log(this.props.exampleWork.loading);
 
         return (
             <div>
@@ -79,7 +89,8 @@ class Admin extends React.Component {
                 </div>
 
                 <AboutCompanyFormChange description={this.props.aboutCompany.aboutCompany} />
-                {!this.props.exampleWork.loading && this.renderExample()}
+                <Button onClick={() => this.toggle()}>Eще</Button>
+                {this.state.toggle && this.renderExample()}
                 <Select />
             </div>
         )
