@@ -70,18 +70,18 @@ export default function VerticalTabs() {
         aria-label="Vertical tabs example"
         className={classes.tabs}
       >
-        <Tab label="Первый калькулятор" {...a11yProps(0)} />
-        <Tab label="Второй калькулятор" {...a11yProps(1)} />
-        <Tab label="Третий калькулятор" {...a11yProps(2)} />
+        <Tab label="Топографическая съёмка" {...a11yProps(0)} />
+        <Tab label="исполнительная съёмка газ" {...a11yProps(1)} />
+        <Tab label="исполнительная съёмка вода и канализация" {...a11yProps(2)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <FirstCalc />
+        <FirstCalc focus={1} />
       </TabPanel>
       <TabPanel value={value} index={1}>
-      <FirstCalc />
-        </TabPanel>
+        <FirstCalc focus={2}/>
+      </TabPanel>
       <TabPanel value={value} index={2}>
-        <FirstCalc />
+        <FirstCalc focus={3}/>
       </TabPanel>
     </div>
   );

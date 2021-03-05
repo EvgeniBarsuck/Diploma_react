@@ -1,9 +1,13 @@
 import React from "react";
 import { TextField , Button } from '@material-ui/core';
-import Tab from '../../components/main/Tab'
+import Tab from '../../components/main/Tab';
+import ExecutiveSurveyWater from './ExecutiveSurveyWater';
+import ExecutiveSurveyGas from './ExecutiveSurveyGas';
+import TopographicSurvey from './TopographicSurvey';
 
 const initialState = {
     in1: '',
+    O2: 0,
 }
 
 class Service extends React.Component {
@@ -32,6 +36,9 @@ class Service extends React.Component {
             <div>
                 <h2>Наши услуги</h2>
                 <Tab />
+                <ExecutiveSurveyWater />
+                <ExecutiveSurveyGas />
+                <TopographicSurvey />
             </div>    
         )
     }

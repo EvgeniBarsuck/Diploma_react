@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { InputLabel, TextField } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { setValueFirstCalc } from '../../redux/calculactor/calculatorActions';
 const useStyles = makeStyles((theme) => ({
     root: {
 
@@ -12,26 +13,19 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
-export default function FirstCalc() {
+export default function FirstCalc({focus}) {
     const classes = useStyles();
-    const [firstPlace, setFirstPlace] = useState('');
-    const [secondPlace, setSecondPlace] = useState('');
-    const [thrityPlace, setThrityPlace] = useState('');
 
-    const [result, setResult] = useState(firstPlace + secondPlace + thrityPlace);
-
+    const dispatch = useDispatch();
+    const selector = useSelector(state => state.calculator);
+    
+    console.log(selector)
     return (
         <div className={classes.root}>
             <div>
-                <TextField label="Первое поле" value={firstPlace} onChange={(e) => { setFirstPlace(e.target.value); setResult(+e.target.value + +secondPlace + +thrityPlace)}}/>
+                <TextField label="Площадь" value={selector.value} onChange={(e) => dispatch(setValueFirstCalc(e.target.value, focus))}/>
             </div>
-            <div>
-                <TextField label="Первое поле" value={secondPlace} onChange={(e) => { setSecondPlace(e.target.value); setResult(+firstPlace + +e.target.value + +thrityPlace)}}/>
-            </div>
-            <div>
-                <TextField label="Первое поле" value={thrityPlace} onChange={(e) => { setThrityPlace(e.target.value); setResult(+firstPlace + +secondPlace + +e.target.value)}}/>
-            </div>
-            <InputLabel>Общая стоимость: {result}</InputLabel>
+            <InputLabel>Общая стоимость: {selector.resault}</InputLabel>
         </div>
     )
 }
