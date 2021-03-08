@@ -68,12 +68,11 @@ class SpanningTable extends React.Component {
         const K22 = (+K20+ +K21).toFixed(2);
         const D24 = (((K23/100) * K23) + +K22).toFixed(2);
         if (currentFocus){
-            console.log('water')
             this.props.setResaltValue(D24);
         }
 
         return (
-            <TableContainer component={Paper}>
+            <TableContainer style={{display: 'none'}} component={Paper}>
                 <h1>СМЕТА (исполнительная съёмка)   ВОДА и КАНАЛИЗАЦИЯ</h1>
                 <Table aria-label="spanning table">
                     <TableHead>

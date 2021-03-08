@@ -72,7 +72,7 @@ class SpanningTable extends React.Component {
 
 
         return (
-            <TableContainer component={Paper}>
+            <TableContainer style={{display: 'none'}} component={Paper}>
                 <h1>СМЕТА (исполнительная съёмка)   ВОДА и КАНАЛИЗАЦИЯ</h1>
                 <Table aria-label="spanning table">
                     <TableHead>

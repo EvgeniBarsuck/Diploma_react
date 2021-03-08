@@ -1,9 +1,19 @@
 import React from "react";
-import { TextField , Button } from '@material-ui/core';
+import { TextField , Button, Paper, Typography } from '@material-ui/core';
 import Tab from '../../components/main/Tab';
 import ExecutiveSurveyWater from './ExecutiveSurveyWater';
 import ExecutiveSurveyGas from './ExecutiveSurveyGas';
 import TopographicSurvey from './TopographicSurvey';
+import { styled } from '@material-ui/core/styles';
+import styledComponent  from 'styled-components';
+
+const Annotations = styled(Paper)({
+    padding: '10px',
+})
+
+const LinkTo = styledComponent.a`
+    text-decoration: none;
+`
 
 const initialState = {
     in1: '',
@@ -35,7 +45,23 @@ class Service extends React.Component {
         return (
             <div>
                 <h2>Наши услуги</h2>
-                <Tab />
+                <div>
+                    <Tab />
+                    <Annotations elevation={0}>
+                        <Typography>
+                            Расчет стоимости услуги осуществляется на основе рекомендаций установленных Министерством РБ.
+                        </Typography>
+                        <Typography paragraph='true'>
+                            Итоговое значение складывается с учетом технических и географических факторов, а так же потребностей заказчика!
+                        </Typography>
+                        <Typography paragraph='true'>
+                            Подробнее о стоимости инженерных изысканий  и Проектирования - узнайте позвонив нам по телефону: <LinkTo href="tel:+375298187738">+375 29 818-77-38</LinkTo>  
+                        </Typography>
+                        <Typography>
+                            Или напишите: <LinkTo href="mailto:Andrey51184@mail.ru">Andrey51184@mail.ru</LinkTo>. Мы ответим Вам в самое ближайшее время!
+                        </Typography>
+                    </Annotations>
+                </div>
                 <ExecutiveSurveyWater />
                 <ExecutiveSurveyGas />
                 <TopographicSurvey />
@@ -43,5 +69,6 @@ class Service extends React.Component {
         )
     }
 } 
+
 
 export default Service;

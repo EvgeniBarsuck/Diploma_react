@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   }));
   
 
-export default function FirstCalc({focus}) {
+export default function CalcWithConvertor({focus}) {
     const classes = useStyles();
 
     const dispatch = useDispatch();
@@ -23,7 +23,10 @@ export default function FirstCalc({focus}) {
     return (
         <div className={classes.root}>
             <div>
-                <TextField label="Площадь" value={selector.value} onChange={(e) => dispatch(setValueFirstCalc(e.target.value, focus))}/>
+                <TextField label="Гектары(га)" value={selector.value/10000} onChange={(e) => dispatch(setValueFirstCalc(e.target.value*10000, focus))}/>
+            </div>
+            <div>
+                <TextField label="Метры(м)" value={selector.value} onChange={(e) => dispatch(setValueFirstCalc(e.target.value, focus))}/>
             </div>
             <InputLabel>Общая стоимость: {selector.resault} бел.руб</InputLabel>
         </div>

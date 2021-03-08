@@ -1,15 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, styled } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import FirstCalc from './FirstCalc'
-import Test from './test'
-import { useDispatch } from 'react-redux';
-import { setValueFirstCalc } from '../../redux/calculactor/calculatorActions';
-import { setResaltValue } from '../../redux/calculactor/calculatorActions';
+import CalcWithConvertor from './CalcWithConvertor'
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -49,7 +46,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     backgroundColor: theme.palette.background.paper,
     display: 'flex',
-    height: 224,
+    height: 180,
   },
   tabs: {
     borderRight: `1px solid ${theme.palette.divider}`,
@@ -60,11 +57,7 @@ export default function VerticalTabs() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const dispatch = useDispatch();
-
   const handleChange = (event, newValue) => {
-    dispatch(setValueFirstCalc(null));
-    dispatch(setResaltValue(0));
     setValue(newValue);
   };
 
@@ -77,20 +70,15 @@ export default function VerticalTabs() {
         onChange={handleChange}
         aria-label="Vertical tabs example"
         className={classes.tabs}
-        centered
       >
-        <Tab label="Топографическая съёмка" {...a11yProps(0)} />
-        <Tab label="исполнительная съёмка" {...a11yProps(1)} />
-        <Tab label="Проектные работы" {...a11yProps(2)} />
+        <Tab label="газ" {...a11yProps(0)} />
+        <Tab label="вода и канализация" {...a11yProps(1)} />
       </Tabs>
       <TabPanel value={value} index={0}>
-        <FirstCalc focus={1} />
+        <CalcWithConvertor focus={2}/>
       </TabPanel>
       <TabPanel value={value} index={1}>
-        <Test/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
-        <FirstCalc focus={4} />
+        <CalcWithConvertor focus={3}/>
       </TabPanel>
     </div>
   );
