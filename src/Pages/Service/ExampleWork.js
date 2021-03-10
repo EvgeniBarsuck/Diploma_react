@@ -17,7 +17,7 @@ class ExampleWork extends React.Component{
         console.log(this.props.ExampleOfWork)
         return (
             <div>
-                    <ServiceInformation/>
+                <ServiceInformation/>
             </div>
         )
     }

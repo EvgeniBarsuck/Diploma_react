@@ -6,24 +6,22 @@ import Information from '../../components/main/Information';
 import {getAboutCompanyActions} from '../../redux/aboutCompany/aboutCompanyActions';
 import {getAllExampleWork} from '../../redux/exampleWork/ExampleWorkActions';
 
-class AboutCompany extends React.Component{
+class ExampleOfwork extends React.Component{
     render() {
         return (
             <div>
-                    <Information/>
-                    <StickCarousel/>
-                    <ProductLink random={true}/>
+                <ProductLink random={false}/>
             </div>
         )
     }
 }
-    const mapDispatchToProps = dispatch => {
-        return{
-            aboutCompany :  dispatch(getAboutCompanyActions()),
-            exampleWork :  dispatch(getAllExampleWork())
-        }
+const mapDispatchToProps = dispatch => {
+    return{
+        aboutCompany :  dispatch(getAboutCompanyActions()),
+        exampleWork :  dispatch(getAllExampleWork())
     }
+}
 
 
 
-export default connect(null,mapDispatchToProps)(AboutCompany);
+export default connect(null,mapDispatchToProps)(ExampleOfwork);

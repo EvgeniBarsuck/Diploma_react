@@ -8,18 +8,23 @@ import ProductCard from './productCard';
 class ProductLink extends React.Component {
    constructor(props){
        super(props);
-       this.props = props;
+
    } 
    render(){
-        const randomExample = getRandomExample(this.props.exampleWork.exampleWork);
         if(this.props.exampleWork.loading){
-            return (
-                    <p>Загрузка</p>
-            )
+           return (
+               <p>Загрузка</p>
+               )
+            }
+        let randomExample = [];
+        if (this.props.random){
+            randomExample = getRandomExample(this.props.exampleWork.exampleWork);
+        } else {
+            randomExample = this.props.exampleWork.exampleWork;
         }
-       return(
+        return(
            <div>
-                <h3>Примеры наших услуг</h3>
+                <h2>Примеры наших услуг</h2>
                     <Box display="flex" flexWrap="wrap" alignItems="center" justifyContent="center">
                         {randomExample.map((item,index) => (
                                 <div key={index}><ProductCard item={item} /></div>    

@@ -4,13 +4,14 @@ import Card from '../../components/main/productCard';
 import axios from 'axios';
 import Contact from '../../components/main/Contact';
 import { YMaps, Map, Placemark, Circle } from "react-yandex-maps";
-import Test from './contactsList';
+import Test from '../../components/main/List';
 import styled from 'styled-components';
 
 const CompanyContactsContainer = styled.div`
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    padding: 0px !important;
 `
 
 const mapData = {
@@ -34,12 +35,16 @@ const companyContacts = [
 ]
 
 const bankDetails = [
-    'Привер 1: 232313213123',
-    'Привер 2: 232313213123',
-    'Привер 3: 232313213123',
-    'Привер 4: 232313213123',
-    'Привер 5: 232313213123',
-    'Привер 6: 232313213123',
+    'Общество с ограниченой',
+    'Ответственностью "ВеДер и К"',
+    '(ООО "ВеДер и К")',
+    'Ул. Железнодорожная д. 38.',
+    'г.п. Ореховск тел/факс 8(0216) 57 0086',
+    'www.Vedzer@mail.ru',
+    'УНП391701847',
+    'р/с BY03BAPB30124042500120000000',
+    'ОАО "Белагропромбанк" г.Минск',
+    'код BAPBBY2X',
 ]
 
 const peopleContacts = [
@@ -90,11 +95,11 @@ class Contacts extends React.Component {
                             <Circle defaultGeometry={[[54.6838383, 30.49422229999999], 30000]} />
                         </Map>
                     </YMaps>
-                    <Test contacts={companyContacts} title='ООО "ВеДер и К"' titleType="h5"/>
+                    <Test items={companyContacts} title='ООО "ВеДер и К"' titleType="h5"/>
                 </CompanyContactsContainer>
                 <CompanyContactsContainer>
-                    <Test contacts={bankDetails} title="Рекзвизиты" titleType="h6"/>
-                    <Test contacts={peopleContacts} title="Специалисты" titleType="h6"/>
+                    <Test items={bankDetails} title="Рекзвизиты" titleType="h6"/>
+                    <Test items={peopleContacts} title="Специалисты" titleType="h6"/>
                 </CompanyContactsContainer>
             </div>
         )

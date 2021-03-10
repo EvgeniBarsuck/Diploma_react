@@ -19,7 +19,7 @@ const StylepButton = styled.button`
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 752,
-    width: 350
+    width: "auto"
   },
   demo: {
     backgroundColor: theme.palette.background.paper,
@@ -29,8 +29,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function generate(contacts) {
-  return contacts.map((value) =>
+function generate(items) {
+  return items.map((value) =>
     (<ListItem>
         <ListItemText
           primary={value}
@@ -39,7 +39,7 @@ function generate(contacts) {
   );
 }
 
-export default function InteractiveList({contacts, title, titleType}) {
+export default function InteractiveList({items, title, titleType}) {
   const classes = useStyles();
 
   return (
@@ -51,11 +51,11 @@ export default function InteractiveList({contacts, title, titleType}) {
           </Typography>
           <div className={classes.demo}>
             <List>
-              {generate(contacts)}
+              {generate(items)}
             </List>
-            <StylepButton onClick={console.log('work')}>
+            {/* <StylepButton onClick={console.log('work')}>
               <img src="https://w7.pngwing.com/pngs/541/135/png-transparent-skype-for-business-windows-live-messenger-logo-line-skype-blue-text-skype-for-business.png" height="27px" width="48px" alt="Upload error"/>
-            </StylepButton>
+            </StylepButton> */}
           </div>
         </Grid>
       </Grid>

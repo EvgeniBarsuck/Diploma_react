@@ -40,7 +40,7 @@ const icon = {
         },
   "6" : { 
           "icon" : <PersonAddIcon/>,
-          "url" : "/jobopenings"
+          "url" : "/vacancies"
         },
   "7" : { 
           "icon" : <FeedbackIcon/>,
@@ -52,7 +52,7 @@ const icon = {
         },
   "9" : { 
           "icon" : <SupervisedUserCircleIcon/>,
-          "url" : "/ourparther"
+          "url" : "/ourparthers"
         }
 }
 

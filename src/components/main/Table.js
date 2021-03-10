@@ -35,7 +35,6 @@ function createData(name, description, email, phone, position, _id) {
         position,
         history: { name: name, id: _id, phone, position },
     };
-    console.log(res);
     return res;
 }
 
@@ -87,7 +86,7 @@ function Row(props) {
                         <Box margin={1}>
                             <Typography variant="h6" gutterBottom component="div">
                                 Редактирование
-              </Typography>
+                            </Typography>
                             <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
